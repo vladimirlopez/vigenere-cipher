@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png"
+        href="https://vladimirlopez.github.io/the-thinking-experiment/assets/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigenère Cipher | The Thinking Experiment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;600&display=swap"
+        rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-ChiLb0zH.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DKoS96zF.css">
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>VIGENÈRE <span class="accent">CIPHER</span></h1>
+        </header>
+
+        <main>
+            <!-- Left Column: Controls & Input -->
+            <div class="control-column">
+                <div class="card">
+                    <label>Mode</label>
+                    <div class="toggle-mode" style="width: 100%; margin-right: 0;">
+                        <button id="mode-encode" class="btn btn-sm active"
+                            style="flex: 1; border-radius: 4px 0 0 4px; justify-content: center;">Encode</button>
+                        <button id="mode-decode" class="btn btn-sm"
+                            style="flex: 1; border-radius: 0 4px 4px 0; justify-content: center;">Decode</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <label>Step 1: The Keyword</label>
+                    <input type="text" id="keyword-input" placeholder="Enter keyword (e.g. KEY)" value="KEY"
+                        maxlength="15">
+                    <p style="font-size: 0.8rem; color: var(--text-dim); margin-top: 5px;">
+                        The keyword determines the shift for each letter.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <label>Step 2: The Message</label>
+                    <textarea id="message-input" placeholder="message to encrypt..." rows="3">HELLO</textarea>
+                </div>
+
+                <div class="card">
+                    <label>Controls</label>
+                    <div class="step-controls">
+                        <button id="btn-prev" class="btn" disabled>←</button>
+                        <button id="btn-next" class="btn btn-primary" style="flex: 2;">Next Letter</button>
+                        <button id="btn-auto" class="btn">Auto</button>
+                    </div>
+                    <button id="btn-reset" class="btn"
+                        style="width: 100%; margin-top: 10px; border-color: var(--border-color); color: var(--text-dim);">Reset
+                        Simulation</button>
+                </div>
+
+                <div class="card">
+                    <label>Result</label>
+                    <div id="result-display"
+                        style="font-family: var(--font-mono); font-size: 1.2rem; min-height: 1.5em; word-break: break-all;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Visualization -->
+            <div class="visualization-column">
+                <div class="tutorial-status" id="tutorial-status">
+                    Welcome! Click "Next Letter" to start encrypting.
+                </div>
+
+                <!-- Visual Stack: Key over Plaintext -->
+                <div class="key-expansion" id="key-expansion">
+                    <!-- Javascript will populate this -->
+                </div>
+
+                <!-- The Tabula Recta Grid -->
+                <div class="tabula-recta-container">
+                    <div id="tabula-recta" class="tabula-recta">
+                        <!-- JS generates grid here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer style="text-align: center; font-size: 0.8rem; color: var(--text-dim); padding-top: 10px;">
+            &copy; 2026 Vladimir Lopez. Released under the MIT License.
+        </footer>
+    </div>
+</body>
+
+</html>
